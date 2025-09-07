@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.scss";
-import { FaInfoCircle, FaHandsHelping, FaAndroid, FaCarSide, FaCarCrash, FaVideo, FaKey, FaCar } from "react-icons/fa";
+import { FaInfoCircle, FaHandsHelping, FaVideo, FaKey } from "react-icons/fa";
 import { useRouter } from "next/router";
-import Chip from "@/components/common/Chip";
 import Fab from "@/components/common/Fab";
 import { IoMail } from "react-icons/io5";
 import MainLayout from "@/components/MainLoyout";

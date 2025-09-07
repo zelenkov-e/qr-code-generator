@@ -3,6 +3,8 @@ import styles from "./../styles/Home.module.scss";
 import Separator from "@/components/common/Separator";
 import Chip from "@/components/common/Chip";
 import { FaAndroid } from "react-icons/fa";
+import BulkQRGenerator from "@/components/Generator/index.";
+
 
 const HeaderProps = {
   title: "О приложении Info4cars — Полная информация об автомобилях по VIN и госномеру",
@@ -25,11 +27,8 @@ export default function GeneratorPage() {
         </div>
       </div>
       <main className={`${styles.main} `}>
-        <div>
-         <h3>Generator</h3>
-
-        </div>
-    </main>
+         <BulkQRGenerator/>
+     </main>
     </MainLayout>
   );
 }
