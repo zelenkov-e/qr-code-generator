@@ -1,0 +1,28 @@
+.chipLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  background-color: #e2e8f0;
+  color: #1a202c;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.chipLink:hover {
+  background-color: #cbd5e0;
+}
+/* Disabled state */
+.disabled {
+  background-color: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}

@@ -1,0 +1,95 @@
+/* Toast.module.scss */
+
+.notificationContainer {
+  font-size: 14px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 999999;
+}
+
+.topRight {
+  top: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toastInRight 0.7s;
+}
+
+.bottomRight {
+  bottom: 12px;
+  right: 12px;
+  transition: transform 0.6s ease-in-out;
+  animation: toastInRight 0.7s;
+}
+
+.topLeft {
+  top: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in;
+  animation: toastInLeft 0.7s;
+}
+
+.bottomLeft {
+  bottom: 12px;
+  left: 12px;
+  transition: transform 0.6s ease-in;
+  animation: toastInLeft 0.7s;
+}
+
+.notification {
+  background: #fff;
+  transition: 0.3s ease;
+  position: relative;
+  pointer-events: auto;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 300px;
+  max-height: 100px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #999;
+  color: #000;
+  opacity: 0.9;
+  background-position: 15px;
+  background-repeat: no-repeat;
+  &:hover {
+    box-shadow: 0 0 12px #fff;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.notificationMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-line;
+}
+
+.toastSuccess {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.toastError {
+  color: #fff;
+  background-color: #e0ac08;
+}
+
+@keyframes toastInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

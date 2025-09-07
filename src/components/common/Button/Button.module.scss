@@ -1,0 +1,46 @@
+// Button.module.scss
+
+@mixin button-default {
+  height: 38px;
+  padding: 0 43px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.askBtnPrimary {
+  @include button-default;
+  background: #396efd;
+  border: #396efd;
+  color: #ffffff;
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background-color: #3155b7;
+  }
+}
+
+.askBtnDefault {
+  @include button-default;
+  background: #fff;
+  border: 1px solid #767676;
+  color: #808080;
+
+  &:hover {
+    color: #252631;
+  }
+}
+
+.askBtnBasic {
+  @include button-default;
+  background: #efefef;
+  border: none;
+  color: #707070;
+}
+
+.askBtnDisabled {
+  background-color: #efefef;
+  cursor: default;
+}

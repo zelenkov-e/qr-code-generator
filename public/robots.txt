@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://info4cars.com
+
+# Sitemaps
+Sitemap: https://info4cars.com/sitemap.xml
