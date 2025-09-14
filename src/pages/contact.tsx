@@ -1,4 +1,6 @@
 import MainLayout from "@/components/MainLoyout";
+import { getI18nProps } from "@/lib/withTranslations";
+import { useTranslation } from "next-i18next";
 import styles from "./../styles/Home.module.scss";
 import Input from "@/components/common/Input";
 import { useContext, useState } from "react";
@@ -29,7 +31,8 @@ const HeaderProps = {
   keywords: "контакты Info4cars, поддержка, обратная связь, задать вопрос, помощь, связаться с нами, Info4cars support",
 };
 
-export default function ContactPage() {
+function ContactPage() {
+  const { t } = useTranslation("page");
   const router = useRouter();
   const toast = useContext(ToastContext);
   const [contacts, setContacts] = useState<{ [key: string]: string }>({ Name: "", Phone: "", Email: "" });
@@ -100,7 +103,9 @@ export default function ContactPage() {
   return (
     <MainLayout {...HeaderProps}>
       <div className={styles.contactUs}>
-        <p>У вас есть вопросы о нашем сервисе? Тогда напишите нам сообщение, и мы немедленно свяжемся с вами.</p>
+        <h1>{t("contactUs.title")}</h1>
+        <p>{t("contactUs.description")}</p>
+        {/* <p>У вас есть вопросы о нашем сервисе? Тогда напишите нам сообщение, и мы немедленно свяжемся с вами.</p> */}
       </div>
       <main className={`${styles.main}`}>
         <form onSubmit={handleSubmit}>
@@ -129,16 +134,20 @@ export default function ContactPage() {
           <Wrapper direction="row" justify="center" align="center" gap="1rem">
             <Checkbox name="contact-us" checked={isAllowAgreement} onChange={() => setIsAllowAgreement(!isAllowAgreement)} />
             <Text size="small">
-              Вы соглашаетесь с тем, что ваши данные будут использованы для обработки вашего запроса.
-              <Link href="/privacy-policy">{` политика конфиденциальности`}</Link>
+              {t("contactUs.agreement")}
+              <Separator />
+              <Link href="/privacy-policy">{t("contactUs.privacyPolicy")}</Link>
             </Text>
           </Wrapper>
           <Separator />
           <Button disabled={loadingForm} type="submit">
-            Отправить сообщение
+            send
           </Button>
         </form>
       </main>
     </MainLayout>
   );
 }
+
+export const getStaticProps = getI18nProps(["page"]);
+export default ContactPage;

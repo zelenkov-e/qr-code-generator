@@ -5,10 +5,10 @@ export enum FormInputs {
   note = "Note",
 }
 export enum Inputs {
-  name = "Имя",
-  email = "Почта",
-  phone = "Телефон",
-  note = "Ваш вопрос",
+  name = "name",
+  email = "email",
+  phone = "phone",
+  note = "problem",
 }
 
 export enum Types {

@@ -7,6 +7,7 @@ import { IoMail } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "./../styles/Home.module.scss";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,6 +55,7 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
         <meta name="twitter:image" content={metaImage} />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <LanguageSwitcher />
         <div className={styles.hero}>
           <div>
             <h1>Проверка автомобиля онлайн — история по VIN и номеру</h1>

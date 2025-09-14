@@ -1,0 +1,16 @@
+{
+  "contactUs": {
+    "title": "Contact Us — QR Code Generator User Support",
+    "description": "If you have any questions, suggestions, or need assistance — contact our team. We will respond as quickly as possible.",
+    "agreement": "You agree that your data will be used to process your request.",
+    "privacyPolicy": "privacy policy."
+  },
+  "about": {
+    "title": "About QR Code Generator",
+    "description": "Learn more about our service, its features, and our mission. We make QR code generation simple and accessible for everyone."
+  },
+  "policy": {
+    "title": "Privacy Policy",
+    "description": "We care about your security and privacy. Read our data processing and privacy policy."
+  }
+}

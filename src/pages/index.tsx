@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const PAGES = [
   { title: "link code generator", icon: <FaVideo />, path: "/link-code-generator", describtion: "Видео иструкции по пользованию приложением" },
   { title: "wi-fi code generator", icon: <FaVideo />, path: "/wi-fi-code-generator", describtion: "Видео иструкции по пользованию приложением" },
+  { title: "contact", icon: <FaInfoCircle />, path: "/contact", describtion: "Информация о сервисе" },
   //   { title: "about", icon: <FaInfoCircle />, path: "/about", describtion: "Информация о сервисе" },
   //   { title: "support us", icon: <FaHandsHelping />, path: "/support", describtion: "Возможность поблагодарить" },
   //   { title: "privacy policy", icon: <FaKey />, path: "/policy", describtion: "Конфиденциальность" },
