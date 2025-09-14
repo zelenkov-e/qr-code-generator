@@ -9,10 +9,11 @@ import MainLayout from "@/components/MainLoyout";
 const inter = Inter({ subsets: ["latin"] });
 
 const PAGES = [
-  { title: "generator", icon: <FaVideo />, path: "/generator", describtion: "Видео иструкции по пользованию приложением" },
-  { title: "about", icon: <FaInfoCircle />, path: "/about", describtion: "Информация о сервисе" },
-  { title: "support us", icon: <FaHandsHelping />, path: "/support", describtion: "Возможность поблагодарить" },
-  { title: "privacy policy", icon: <FaKey />, path: "/policy", describtion: "Конфиденциальность" },
+  { title: "link code generator", icon: <FaVideo />, path: "/link-code-generator", describtion: "Видео иструкции по пользованию приложением" },
+  { title: "wi-fi code generator", icon: <FaVideo />, path: "/wi-fi-code-generator", describtion: "Видео иструкции по пользованию приложением" },
+  //   { title: "about", icon: <FaInfoCircle />, path: "/about", describtion: "Информация о сервисе" },
+  //   { title: "support us", icon: <FaHandsHelping />, path: "/support", describtion: "Возможность поблагодарить" },
+  //   { title: "privacy policy", icon: <FaKey />, path: "/policy", describtion: "Конфиденциальность" },
 ];
 
 const HeaderProps = {
@@ -36,28 +37,18 @@ export default function Home() {
     router.push(path);
   };
 
-
   return (
     <MainLayout {...HeaderProps}>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.hero}>
-          <div>
-            <h1>Проверка автомобиля онлайн — история по VIN и номеру</h1>
-            <h2>Qr code generator - сервис по поиску полезной информации об авто.</h2>
+      <div className={styles.grid}>
+        {PAGES.map((page) => (
+          <div key={page.title} className={styles.card} onClick={() => handleClick(page.path)}>
+            <div className={styles.cardIcon}>{page.icon}</div>
+            <h2>{page.title}</h2>
+            <p>{page.describtion}</p>
           </div>
-        </div>
-  
-        <div className={styles.grid}>
-          {PAGES.map((page) => (
-            <div key={page.title} className={styles.card} onClick={() => handleClick(page.path)}>
-              <div className={styles.cardIcon}>{page.icon}</div>
-              <h2>{page.title}</h2>
-              <p>{page.describtion}</p>
-            </div>
-          ))}
-        </div>
-        <Fab onClick={() => router.push("/contact")} icon={<IoMail />} />
-      </main>
+        ))}
+      </div>
+      <Fab onClick={() => router.push("/contact")} icon={<IoMail />} />
     </MainLayout>
   );
 }

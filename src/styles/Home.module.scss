@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  //   padding: 2rem;
   gap: 1rem;
 }
 
@@ -21,7 +21,15 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  width: 70%;
+  //   width: 90%;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 /* Hero Banner */
@@ -30,14 +38,14 @@
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/main.jpg") center/cover no-repeat;
 }
 
-.about {
-  @extend %sectionLayout;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/home-page-image.jpg") center/cover no-repeat;
-}
-.contactUs {
-  @extend %sectionLayout;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/contact-us-image.jpg") center/cover no-repeat;
-}
+// .about {
+//   @extend %sectionLayout;
+//   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/home-page-image.jpg") center/cover no-repeat;
+// }
+// .contactUs {
+//   @extend %sectionLayout;
+//   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/contact-us-image.jpg") center/cover no-repeat;
+// }
 
 /* Cards Section */
 .grid {
@@ -125,6 +133,6 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 70%;
+    // width: 70%;
   }
 }

@@ -1,0 +1,190 @@
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: Arial, sans-serif;
+  width: 95%;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 1.5rem;
+
+  input,
+  select {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      margin: 0;
+    }
+  }
+
+  .wifiBlock {
+    margin-bottom: 1rem;
+    // position: relative;
+    cursor: pointer;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    // text-align: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .addBtn,
+  .removeBtn,
+  .generateBtn,
+  .downloadBtn,
+  .resetBtn,
+  .zipBtn {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+
+  .addBtn {
+    background: #2563eb;
+    color: #fff;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background: #1d4ed8;
+    }
+  }
+
+  .removeBtn {
+    background: #dc2626;
+    color: #fff;
+    // position: absolute;
+    right: 0;
+    top: 0;
+
+    &:hover {
+      background: #b91c1c;
+    }
+  }
+
+  .generateBtn {
+    background: #16a34a;
+    color: #fff;
+    margin-bottom: 2rem;
+
+    &:hover {
+      background: #15803d;
+    }
+  }
+}
+
+.qrGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.qrItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+  canvas {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .qrText {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    word-break: break-word;
+    text-align: center;
+    color: #333;
+  }
+
+  .downloadBtn {
+    background: #2563eb;
+    color: #fff;
+    margin-top: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+
+    &:hover {
+      background: #1d4ed8;
+    }
+  }
+}
+
+.logoUpload,
+.logoPreview {
+  margin-bottom: 1.5rem;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  input[type="file"] {
+    margin-top: 0.5rem;
+  }
+
+  .logoPreview {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+
+    img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    // max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    width: 95%;
+  }
+}

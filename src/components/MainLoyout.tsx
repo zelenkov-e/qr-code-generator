@@ -6,6 +6,7 @@ import Fab from "./common/Fab";
 import { IoMail } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import styles from "./../styles/Home.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,15 +53,23 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
         <meta name="twitter:description" content={metaDesc} />
         <meta name="twitter:image" content={metaImage} />
       </Head>
-      <main className={`${inter.className}`}>
-        {router.pathname !== "/" && (
-          <Link href="/">
-            <Chip>
-              <MdOutlineArrowBackIosNew size={24} color="black" />
-              на главную
-            </Chip>
-          </Link>
-        )}
+      <main className={`${styles.main} ${inter.className}`}>
+        <div className={styles.hero}>
+          <div>
+            <h1>Проверка автомобиля онлайн — история по VIN и номеру</h1>
+            <h2>Qr code generator - сервис по поиску полезной информации об авто.</h2>
+          </div>
+        </div>
+        <div className={`${styles.navigation}`}>
+          {router.pathname !== "/" && (
+            <Link href="/">
+              <Chip>
+                <MdOutlineArrowBackIosNew size={24} color="black" />
+                на главную
+              </Chip>
+            </Link>
+          )}
+        </div>
         {children}
         <Fab onClick={() => router.push("/contact")} icon={<IoMail />} />
       </main>
