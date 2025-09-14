@@ -1,20 +1,21 @@
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.scss";
-import { FaInfoCircle, FaHandsHelping, FaVideo, FaKey } from "react-icons/fa";
+import { FaInfoCircle, FaHandsHelping, FaVideo, FaKey, FaWifi, FaLink } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Fab from "@/components/common/Fab";
 import { IoMail } from "react-icons/io5";
 import MainLayout from "@/components/MainLoyout";
+import { BsQrCode } from "react-icons/bs";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const PAGES = [
-  { title: "link code generator", icon: <FaVideo />, path: "/link-code-generator", describtion: "Видео иструкции по пользованию приложением" },
-  { title: "wi-fi code generator", icon: <FaVideo />, path: "/wi-fi-code-generator", describtion: "Видео иструкции по пользованию приложением" },
-  { title: "contact", icon: <FaInfoCircle />, path: "/contact", describtion: "Информация о сервисе" },
-  //   { title: "about", icon: <FaInfoCircle />, path: "/about", describtion: "Информация о сервисе" },
-  //   { title: "support us", icon: <FaHandsHelping />, path: "/support", describtion: "Возможность поблагодарить" },
-  //   { title: "privacy policy", icon: <FaKey />, path: "/policy", describtion: "Конфиденциальность" },
+  { title: "link code generator", icon: <BsQrCode />, path: "/link-code-generator" },
+  { title: "wi-fi code generator", icon: <BsQrCode />, path: "/wi-fi-code-generator" },
+  { title: "contact", icon: <FaInfoCircle />, path: "/contact" },
+  { title: "about", icon: <FaInfoCircle />, path: "/about" },
+  { title: "support us", icon: <FaHandsHelping />, path: "/support" },
+  { title: "privacy policy", icon: <FaKey />, path: "/policy" },
 ];
 
 const HeaderProps = {
@@ -45,7 +46,6 @@ export default function Home() {
           <div key={page.title} className={styles.card} onClick={() => handleClick(page.path)}>
             <div className={styles.cardIcon}>{page.icon}</div>
             <h2>{page.title}</h2>
-            <p>{page.describtion}</p>
           </div>
         ))}
       </div>

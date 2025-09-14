@@ -102,12 +102,10 @@ function ContactPage() {
 
   return (
     <MainLayout {...HeaderProps}>
-      <div className={styles.contactUs}>
+      <div className={styles.describtion}>
         <h1>{t("contactUs.title")}</h1>
         <p>{t("contactUs.description")}</p>
-        {/* <p>У вас есть вопросы о нашем сервисе? Тогда напишите нам сообщение, и мы немедленно свяжемся с вами.</p> */}
-      </div>
-      <main className={`${styles.main}`}>
+
         <form onSubmit={handleSubmit}>
           {InputsGroupFields.map((field, indx) => {
             const { name, placeholder } = field;
@@ -131,12 +129,10 @@ function ContactPage() {
 
           <TextArea placeholder={Inputs.note} name={note} value={note} handleChange={(e) => handleChange(e, FormInputs.note)} />
           {!isEmtyField(note) && note.length < NAMEMINLENGTH && <div color={Types.danger}>{minLength(NAMEMINLENGTH)}</div>}
-          <Wrapper direction="row" justify="center" align="center" gap="1rem">
+          <Wrapper gap="1rem">
             <Checkbox name="contact-us" checked={isAllowAgreement} onChange={() => setIsAllowAgreement(!isAllowAgreement)} />
             <Text size="small">
-              {t("contactUs.agreement")}
-              <Separator />
-              <Link href="/privacy-policy">{t("contactUs.privacyPolicy")}</Link>
+              {t("contactUs.agreement")} <Link href="/privacy-policy">{t("contactUs.privacyPolicy")}</Link>
             </Text>
           </Wrapper>
           <Separator />
@@ -144,7 +140,7 @@ function ContactPage() {
             send
           </Button>
         </form>
-      </main>
+      </div>
     </MainLayout>
   );
 }

@@ -67,7 +67,7 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
             <Link href="/">
               <Chip>
                 <MdOutlineArrowBackIosNew size={24} color="black" />
-                на главную
+                back
               </Chip>
             </Link>
           )}

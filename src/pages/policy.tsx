@@ -1,10 +1,8 @@
 import MainLayout from "@/components/MainLoyout";
 import styles from "./../styles/Home.module.scss";
 import Link from "next/link";
-import Chip from "@/components/common/Chip";
-import Text from "@/components/common/Text";
-import Separator from "@/components/common/Separator";
-import { FaAndroid } from "react-icons/fa";
+import { getI18nProps } from "@/lib/withTranslations";
+import { useTranslation } from "react-i18next";
 
 const HeaderProps = {
   title: "Политика конфиденциальности и пользовательское соглашение | Info4cars",
@@ -13,73 +11,26 @@ const HeaderProps = {
   keywords: "политика конфиденциальности, защита данных, пользовательское соглашение, Info4cars, персональные данные, безопасность, Беларусь",
 };
 
-export default function PolicyPage() {
-  const handleChipClick = () => {
-    if (typeof window !== "undefined" && (window as any).umami) {
-      (window as any).umami.track("download-android-policy");
-    }
-  };
-
+function PolicyPage() {
+  const { t } = useTranslation("page");
   return (
     <MainLayout {...HeaderProps}>
       <main className={`${styles.main} `}>
-        <h3>Политика конфиденциальности</h3>
-        <div>
-          <Text size="small">
-            В соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите персональных данных» (далее — Закон), наше приложение
-            обрабатывает и хранит ваши персональные данные в строгом соответствии с действующим законодательством.{" "}
-            <Link href="https://etalonline.by/document/?regnum=H12100099" target="_blank" rel="noreferrer">{` подробнее ..`}</Link>
-            <h1>Пользовательское соглашение</h1>
-            <div className="agreement">
-              <p>
-                <strong>1. Описание сервиса: </strong> Сервис "Info4cars" - предоставляет пользователям техническую возможность получить информацию с
-                государственных сервисов. Приложение не является официальным представителем госорганов.
-              </p>
-              <p>
-                <strong>2. Передача данных: </strong> Пользователь осознанно и добровольно вводит свои данные (включая VIN, номер авто, капчу и другие
-                данные) в интерфейс приложения. Приложение выполняет запросы от имени пользователя исключительно для получения информации,
-                запрашиваемой самим пользователем. Приложение не хранит и не передает данные третьим лицам.
-              </p>
-              <p>
-                <strong>3. Ограничение ответственности: </strong> Сервис "Info4cars" - не несет ответственности за: Точность и полноту данных,
-                предоставляемых сторонними государственными ресурсами. Неправильное использование информации пользователем. Возможные технические
-                ограничения или сбои на стороне внешних сайтов (включая невозможность получения данных из-за капчи, ограничений или ошибок сервиса).
-              </p>
-              <p>
-                <strong>4. Запрет автоматизации: </strong> В приложении запрещается автоматический ввод капчи и автоматизированный доступ к сторонним
-                сервисам без участия пользователя. Все действия по вводу данных и капчи выполняются исключительно самим пользователем.
-              </p>
-              <p>
-                <strong>5. Правообладатели: </strong>Все права на контент, данные и интерфейсы сторонних сервисов принадлежат соответствующим
-                государственным органам. Приложение не копирует и не нарушает права на интеллектуальную собственность сторонних ресурсов.
-              </p>
-              <p>
-                <strong>6. Пользовательское согласие: </strong> Используя приложение, пользователь соглашается с настоящим соглашением и подтверждает,
-                что осознаёт все возможные риски, связанные с использованием сторонних государственных сервисов через приложение.
-              </p>
+        <h3>{t("privacyPolicy.title")}</h3>
 
-              <p>
-                <strong>7. Согласие на авторизацию в системе УП "Белтехосмотр":</strong> Активируя поле "Информация, активный ли техосмотр",
-                пользователь предоставляет добровольное согласие на использование его учётных данных для авторизации в системе УП "Белтехосмотр" с
-                целью получения информации о прохождении техосмотра.
-              </p>
-            </div>
-          </Text>
-        </div>
-
-        <Separator size="large" />
-        <div className={styles.description}>
-          <Chip href="https://play.google.com/store/apps/details?id=com.company.infocars" onClick={handleChipClick}>
-            скачать версию для Андроид
-            <FaAndroid size={24} color="green" />
-          </Chip>
-
-          {/* <Chip href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            скачать версию для IOS
-            <FaApple size={30} color="black" />
-          </Chip> */}
+        {/* <h1>{t("privacyPolicy.agreementTitle")}</h1> */}
+        <div className="agreement">
+          <p>{t("privacyPolicy.agreement.service")}</p>
+          <p>{t("privacyPolicy.agreement.dataTransfer")}</p>
+          <p>{t("privacyPolicy.agreement.statistics")}</p>
+          <p>{t("privacyPolicy.agreement.responsibility")}</p>
+          <p>{t("privacyPolicy.agreement.intellectual")}</p>
+          <p>{t("privacyPolicy.agreement.consent")}</p>
         </div>
       </main>
     </MainLayout>
   );
 }
+
+export const getStaticProps = getI18nProps(["page"]);
+export default PolicyPage;

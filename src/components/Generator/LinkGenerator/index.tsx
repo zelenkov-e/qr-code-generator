@@ -16,12 +16,24 @@ type QRItem = {
   logoImage?: string;
 };
 
-const LinkGenerator: React.FC = () => {
-  const [rawLinks, setRawLinks] = useState<string>(""); // textarea
+interface PageProps {
+  preview: string;
+  uploadLogo: string;
+  inputLabel: string;
+  resetBtn: string;
+  downloadAllBtn: string;
+  generateBtn: string;
+  downloadBtn: string;
+  noLinks: string;
+  noQRs: string;
+  limit: string;
+}
+
+const LinkGenerator = ({ preview, uploadLogo, inputLabel, resetBtn, downloadAllBtn, generateBtn, downloadBtn, noLinks, noQRs, limit }: PageProps) => {
+  const [rawLinks, setRawLinks] = useState<string>("");
   const [qrs, setQrs] = useState<QRItem[]>([]);
   const [logoImage, setLogoImage] = useState<string | undefined>(undefined);
 
-  // загрузка файла логотипа
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -33,7 +45,6 @@ const LinkGenerator: React.FC = () => {
     reader.readAsDataURL(file);
   };
 
-  // генерация QR-кодов
   const generateAllQR = () => {
     const linksArray = rawLinks
       .split("\n")
@@ -41,12 +52,13 @@ const LinkGenerator: React.FC = () => {
       .filter((l) => l.length > 0);
 
     if (linksArray.length === 0) {
-      alert("Нет ссылок для генерации QR.");
+      alert(noLinks);
       return;
     }
 
     if (linksArray.length > MAX_LINKS) {
-      alert(`Максимум ${MAX_LINKS} ссылок за раз.`);
+      //   alert(`Максимум ${MAX_LINKS} ссылок за раз.`);
+      alert(limit);
       return;
     }
 
@@ -57,7 +69,6 @@ const LinkGenerator: React.FC = () => {
     setQrs(qrList);
   };
 
-  // сброс формы
   const resetAll = () => {
     setRawLinks("");
     setQrs([]);
@@ -76,10 +87,9 @@ const LinkGenerator: React.FC = () => {
     link.click();
   };
 
-  // скачать все QR как архив
   const downloadAllAsZip = async () => {
     if (qrs.length === 0) {
-      alert("Нет QR-кодов для скачивания");
+      alert(noQRs);
       return;
     }
 
@@ -101,38 +111,33 @@ const LinkGenerator: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoUpload}>
-        <label>Выберите логотип (png/jpg):</label>
+        <label>{uploadLogo}</label>
         <input type="file" accept="image/*" onChange={handleFileUpload} />
         {logoImage && (
           <div className={styles.logoPreview}>
-            <p>Предпросмотр:</p>
-            <img src={logoImage} alt="Логотип" width={80} />
+            <p>{preview}</p>
+            <img src={logoImage} alt="logo" width={80} />
           </div>
         )}
       </div>
 
-      {/* Ввод ссылок через textarea */}
       <div className={styles.form}>
-        <label>Список ссылок (по одной в строке):</label>
-        <textarea
-          rows={8}
-          placeholder="Вставьте ссылки, по одной в строке"
-          value={rawLinks}
-          onChange={(e) => setRawLinks(e.target.value)}
-          className={styles.textarea}
-        />
+        <label>{inputLabel}</label>
+        <textarea rows={8} value={rawLinks} onChange={(e) => setRawLinks(e.target.value)} className={styles.textarea} />
       </div>
 
       <div className={styles.actions}>
         <button onClick={generateAllQR} className={styles.generateBtn}>
-          Сгенерировать QR-коды
+          {generateBtn}
         </button>
+
         <button onClick={resetAll} className={styles.resetBtn}>
-          Сбросить
+          {resetBtn}
         </button>
+
         {qrs.length > 0 && (
           <button onClick={downloadAllAsZip} className={styles.zipBtn}>
-            Скачать все ZIP
+            {downloadAllBtn}
           </button>
         )}
       </div>
@@ -160,7 +165,7 @@ const LinkGenerator: React.FC = () => {
                 removeQrCodeBehindLogo
               />
               <button onClick={() => downloadQR(canvasId, idx)} className={styles.downloadBtn}>
-                Скачать
+                {downloadBtn}
               </button>
               <div className={styles.qrText}>{qr.data}</div>
             </div>

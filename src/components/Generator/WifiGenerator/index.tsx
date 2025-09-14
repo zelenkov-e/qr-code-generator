@@ -21,19 +21,33 @@ type QRItem = {
   logoImage?: string;
 };
 
-const WifiGenerator: React.FC = () => {
+interface PageProps {
+  preview: string;
+  uploadLogo: string;
+  inputLabel: string;
+  resetBtn: string;
+  downloadAllBtn: string;
+  generateBtn: string;
+  downloadBtn: string;
+  noLinks: string;
+  noQRs: string;
+  limit: string;
+  hiddenNetwork: string;
+  removeBtn: string;
+}
+
+const WifiGenerator = ({ preview, uploadLogo, resetBtn, generateBtn, downloadBtn, noLinks, limit, hiddenNetwork, removeBtn }: PageProps) => {
   const [wifiConfigs, setWifiConfigs] = useState<WifiConfig[]>([{ ssid: "", password: "", type: "WPA", hidden: false }]);
   const [qrs, setQrs] = useState<QRItem[]>([]);
   const [logoImage, setLogoImage] = useState<string | undefined>(undefined);
 
-  // загрузка файла логотипа
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     const reader = new FileReader();
     reader.onload = () => {
-      setLogoImage(reader.result as string); // base64 строка
+      setLogoImage(reader.result as string);
     };
     reader.readAsDataURL(file);
   };
@@ -50,7 +64,7 @@ const WifiGenerator: React.FC = () => {
 
   const addWifiConfig = () => {
     if (wifiConfigs.length >= MAX_LINKS) {
-      alert(`Максимум ${MAX_LINKS} Wi-Fi QR за раз.`);
+      alert(limit);
       return;
     }
     setWifiConfigs([...wifiConfigs, { ssid: "", password: "", type: "WPA", hidden: false }]);
@@ -63,15 +77,14 @@ const WifiGenerator: React.FC = () => {
   const generateWifiString = ({ ssid, password, type, hidden }: WifiConfig) =>
     `WIFI:T:${type};S:${ssid};P:${password};H:${hidden ? "true" : "false"};;`;
 
-  // Генерация QR-кодов
   const generateAllQR = () => {
     if (wifiConfigs.length === 0) {
-      alert("Нет Wi-Fi данных для генерации QR.");
+      alert(noLinks);
       return;
     }
     const qrList: QRItem[] = wifiConfigs.map((cfg) => ({
       data: generateWifiString(cfg),
-      logoImage, // логотип должен лежать в /public/logo.png
+      logoImage,
     }));
     setQrs(qrList);
   };
@@ -96,12 +109,12 @@ const WifiGenerator: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoUpload}>
-        <label>Выберите логотип (png/jpg):</label>
+        <label>{uploadLogo}</label>
         <input type="file" accept="image/*" onChange={handleFileUpload} />
         {logoImage && (
           <div className={styles.logoPreview}>
-            <p>Предпросмотр:</p>
-            <img src={logoImage} alt="Логотип" width={80} />
+            <p>{preview}</p>
+            <img src={logoImage} alt="logo" width={80} />
           </div>
         )}
       </div>
@@ -109,8 +122,8 @@ const WifiGenerator: React.FC = () => {
       <div className={styles.form}>
         {wifiConfigs.map((cfg, idx) => (
           <div key={idx} className={styles.wifiBlock}>
-            <input type="text" placeholder="SSID" value={cfg.ssid} onChange={(e) => updateWifiField(idx, "ssid", e.target.value)} />
-            <input type="text" placeholder="Пароль" value={cfg.password} onChange={(e) => updateWifiField(idx, "password", e.target.value)} />
+            <input type="text" placeholder="SSID(NETWORK NAME)" value={cfg.ssid} onChange={(e) => updateWifiField(idx, "ssid", e.target.value)} />
+            <input type="text" placeholder="PASSWORD" value={cfg.password} onChange={(e) => updateWifiField(idx, "password", e.target.value)} />
             <select value={cfg.type} onChange={(e) => updateWifiField(idx, "type", e.target.value as WifiConfig["type"])}>
               <option value="WPA">WPA</option>
               <option value="WEP">WEP</option>
@@ -118,26 +131,26 @@ const WifiGenerator: React.FC = () => {
             </select>
             <label className={styles.checkbox}>
               <input type="checkbox" checked={cfg.hidden} onChange={(e) => updateWifiField(idx, "hidden", e.target.checked)} />
-              <span>Скрытая сеть</span>
+              <span>{hiddenNetwork}</span>
             </label>
             {wifiConfigs.length > 1 && (
               <button onClick={() => removeWifiConfig(idx)} className={styles.removeBtn}>
-                Удалить
+                {removeBtn}
               </button>
             )}
           </div>
         ))}
         <button onClick={addWifiConfig} className={styles.addBtn}>
-          Добавить Wi-Fi
+          + Wi-Fi
         </button>
       </div>
 
       <button onClick={generateAllQR} className={styles.generateBtn}>
-        Сгенерировать QR-коды
+        {generateBtn}
       </button>
 
       <button onClick={resetAll} className={styles.resetBtn}>
-        Сбросить
+        {resetBtn}
       </button>
 
       {/* Сетка с QR */}
@@ -163,7 +176,7 @@ const WifiGenerator: React.FC = () => {
                 removeQrCodeBehindLogo
               />
               <button onClick={() => downloadQR(canvasId, idx)} className={styles.downloadBtn}>
-                Скачать
+                {downloadBtn}
               </button>
               <div className={styles.qrText}>{qr.data}</div>
             </div>

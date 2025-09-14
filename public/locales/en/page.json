@@ -1,4 +1,8 @@
 {
+  "home": {
+    "title": "Create and generate multiple QR codes online",
+    "description": "Qr code generator is a service for generating QR codes with the option to add your own unique label. Supports bulk creation of multiple codes at once."
+  },
   "contactUs": {
     "title": "Contact Us — QR Code Generator User Support",
     "description": "If you have any questions, suggestions, or need assistance — contact our team. We will respond as quickly as possible.",
@@ -6,11 +10,78 @@
     "privacyPolicy": "privacy policy."
   },
   "about": {
-    "title": "About QR Code Generator",
-    "description": "Learn more about our service, its features, and our mission. We make QR code generation simple and accessible for everyone."
+    "intro": "qr-code-generator is a convenient and functional application that helps users create QR codes for different purposes. Our main advantage is the ability to generate multiple codes at once and add your own unique label.",
+    "registeredUsers": "For registered users: access your QR generation history and saved projects. Registration is available directly in the app.",
+    "featuresTitle": "App Features",
+    "features": {
+      "bulkGeneration": "Bulk generation: create multiple QR codes at once.",
+      "customLabel": "Custom labels: add your own text or logo to each code.",
+      "infoSearch": "Information encoding: generate QR codes for links, Wi-Fi, business cards, and other data.",
+      "history": "Generation history: view previously created QR codes and reuse them."
+    }
   },
-  "policy": {
+
+  "support": {
+    "title": "Project Support",
+    "donation1": "Donations are voluntary and not required for using the site. You may support the project, but this does not affect access to content or services.",
+    "donation2": "Donations are used to maintain the application, improve the user experience, and promote content that is important for our audience.",
+    "paymentTitle": "Payment via personal account through the E-POS service",
+    "paymentInstruction": "To pay, the client needs to open their banking app, select: ERIP / E-POS service / and enter the account number: 30916-1-1",
+    "qrInstruction": "Scan the QR code to make a payment"
+  },
+
+  "privacyPolicy": {
     "title": "Privacy Policy",
-    "description": "We care about your security and privacy. Read our data processing and privacy policy."
+    "law": "In accordance with the Law of the Republic of Belarus of May 7, 2021 No. 99-З 'On Personal Data Protection', our application processes and stores data strictly in compliance with current legislation.",
+    "linkText": "read more ..",
+    "agreementTitle": "User Agreement",
+    "agreement": {
+      "service": "1. Service description: The 'qr-code-generator' service allows users to create QR codes for different purposes. The application is not an official representative of any governmental or private organizations.",
+      "dataTransfer": "2. Data transfer: The service does not require registration and does not use cookies. The application does not collect or store personal user data. All information entered for QR code generation is used solely for that purpose and is not shared with third parties.",
+      "statistics": "3. Statistics collection: We use Umami only for gathering anonymized website traffic statistics. This data does not allow us to identify individual users.",
+      "responsibility": "4. Limitation of liability: The 'qr-code-generator' service is not responsible for incorrect use of QR codes by users or for possible malfunctions of third-party services.",
+      "intellectual": "5. Intellectual property: All rights to logos, names, and content that QR codes may link to belong to their respective owners. Our service does not copy or infringe on third-party intellectual property.",
+      "consent": "6. User consent: By using the application, the user agrees to this agreement and confirms that they understand all conditions and limitations."
+    }
+  },
+
+  "wifiCodeGenerator": {
+    "title": "Wi-Fi Code Generator",
+    "description": "A service for generating QR codes that let users quickly connect to a Wi-Fi network without entering the password manually.",
+    "usageTitle": "How to Use Wi-Fi Code Generator",
+    "usage": [
+      "Enter the name of your Wi-Fi network (SSID).",
+      "Enter the network password (if required).",
+      "Select the encryption type (WPA, WPA2, no password).",
+      "Generate the QR code and share it with others.",
+      "When scanned, the QR code will automatically connect the device to your Wi-Fi network."
+    ],
+    "note": "Your data is not stored or shared with third parties."
+  },
+  "linkCodeGenerator": {
+    "title": "Link Code Generator",
+    "description": "A service for generating QR codes that contain links to websites, documents, or online pages.",
+    "uploadLogo": "Choose a logo (png/jpg):",
+    "preview": "Preview:",
+    "inputLabel": "List of links (one per line):",
+    "inputPlaceholder": "Paste links, one per line",
+    "generateBtn": "Generate QR codes",
+    "resetBtn": "Reset",
+    "removeBtn": "Remove",
+    "hiddenNetwork": "hidden network",
+    "downloadBtn": "Download",
+    "downloadAllBtn": "Download all as ZIP",
+    "noLinks": "No data to generate QR codes.",
+    "limit": "Maximum {{max}} links at a time.",
+    "noQRs": "No QR codes available for download",
+    "usageTitle": "How to use Link Code Generator",
+    "usage": [
+      "Enter the URL address that the QR code should redirect to.",
+      "Optionally, add a description or a unique label.",
+      "Generate the QR code and download it in the required format.",
+      "Share the QR code in print or digital materials.",
+      "When scanned, the QR code will immediately redirect the user to the specified link."
+    ],
+    "note": "The service does not verify the content of links. The user is responsible for their validity."
   }
 }

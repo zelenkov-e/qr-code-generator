@@ -54,9 +54,7 @@
 
   .addBtn,
   .removeBtn,
-  .generateBtn,
   .downloadBtn,
-  .resetBtn,
   .zipBtn {
     cursor: pointer;
     border: none;
@@ -90,11 +88,30 @@
 
   .generateBtn {
     background: #16a34a;
-    color: #fff;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
     margin-bottom: 2rem;
+    transition: background 0.2s;
 
     &:hover {
       background: #15803d;
+    }
+  }
+
+  .resetBtn {
+    background: #dc2626;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #b91c1c;
     }
   }
 }
@@ -102,7 +119,7 @@
 .qrGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: 8rem;
 }
 
 .qrItem {
