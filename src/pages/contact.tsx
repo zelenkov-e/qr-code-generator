@@ -18,6 +18,7 @@ import Checkbox from "@/components/common/Checkbox";
 import Separator from "@/components/common/Separator";
 import Text from "@/components/common/Text";
 import Wrapper from "@/components/common/Wrapper";
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 const InputsGroupFields: InputField[] = [
   { name: FormInputs.name, placeholder: Inputs.name },
@@ -25,14 +26,10 @@ const InputsGroupFields: InputField[] = [
   { name: FormInputs.email, placeholder: Inputs.email },
 ];
 
-const HeaderProps = {
-  title: "Свяжитесь с нами — Поддержка пользователей QR code generator",
-  description: "Если у вас есть вопросы, предложения или нужна помощь — свяжитесь с командой Info4cars. Мы ответим в кратчайшие сроки",
-  keywords: "контакты Info4cars, поддержка, обратная связь, задать вопрос, помощь, связаться с нами, Info4cars support",
-};
-
 function ContactPage() {
   const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "contactUs");
+
   const router = useRouter();
   const toast = useContext(ToastContext);
   const [contacts, setContacts] = useState<{ [key: string]: string }>({ Name: "", Phone: "", Email: "" });

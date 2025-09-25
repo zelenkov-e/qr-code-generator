@@ -1,20 +1,14 @@
 import MainLayout from "@/components/MainLoyout";
 import styles from "./../styles/Home.module.scss";
-import LinkGenerator from "@/components/Generator/LinkGenerator";
 import { useTranslation } from "react-i18next";
 import { getI18nProps } from "@/lib/withTranslations";
 import QRCodeDecoder from "@/components/Generator/QRCodeDecoder";
-
-const HeaderProps = {
-  title: "О приложении Info4cars — Полная информация об автомобилях по VIN и госномеру",
-  description:
-    "Узнайте, как Info4cars помогает автовладельцам получать важную информацию об автомобилях: история эксплуатации, характеристики, техобслуживание, проверки по VIN и госномеру. Бесплатно для зарегистрированных пользователей.",
-  keywords:
-    "Info4cars, проверка авто, VIN, госномер, история автомобиля, техобслуживание, ДТП, доверенность, угон, исполнительные документы, регистрация авто",
-};
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 function QRCodeDecoderPage() {
   const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "QRCodeDecoder");
+
   const PageProps = {
     uploadLabel: t("QRCodeDecoder.uploadLabel"),
     decodeBtn: t("QRCodeDecoder.decodeBtn"),

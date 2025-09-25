@@ -6,6 +6,9 @@ import Fab from "@/components/common/Fab";
 import { IoMail } from "react-icons/io5";
 import MainLayout from "@/components/MainLoyout";
 import { BsQrCode } from "react-icons/bs";
+import { getI18nProps } from "@/lib/withTranslations";
+import { useTranslation } from "react-i18next";
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,15 +22,10 @@ const PAGES = [
   { title: "privacy policy", icon: <FaKey />, path: "/policy" },
 ];
 
-const HeaderProps = {
-  title: "Проверка автомобиля онлайн — история по VIN и госномеру",
-  description:
-    "Узнайте всё об автомобиле перед покупкой: история по VIN и номеру, ДТП, пробег, владельцы, ограничения. Бесплатная проверка с расширенным отчётом.",
-  keywords:
-    "проверка автомобиля онлайн, история авто, проверить машину по vin, проверка по номеру авто, проверка машины перед покупкой, проверка авто бесплатно",
-};
+function Home() {
+  const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "home");
 
-export default function Home() {
   const router = useRouter();
 
   const handleClick = (path: string) => {
@@ -54,3 +52,6 @@ export default function Home() {
     </MainLayout>
   );
 }
+
+export const getStaticProps = getI18nProps(["page"]);
+export default Home;

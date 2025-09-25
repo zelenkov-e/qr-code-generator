@@ -19,48 +19,36 @@ interface MainLayoutProps {
   image?: string;
 }
 
-const defaultMeta = {
-  title: "Qr code generator — Удобное авто-приложение",
-  description: "Qr code generator — это приложение для получения информации об автомобилях: история, характеристики, данные с госресурсов.",
-  image: "/imgs/logo.png",
-  keywords: "автомобиль, vin, история авто, проверка авто, госномера, авто Беларусь",
-};
-
 const MainLayout = ({ title, description, keywords, children, image }: MainLayoutProps) => {
   const router = useRouter();
-
-  const metaTitle = title || defaultMeta.title;
-  const metaDesc = description || defaultMeta.description;
-  const metaImage = image || defaultMeta.image;
-  const metaKeywords = keywords || defaultMeta.keywords;
 
   return (
     <>
       <Head>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDesc} />
-        <meta name="keywords" content={metaKeywords} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDesc} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={metaImage} />
+        <meta property="og:image" content={image} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDesc} />
-        <meta name="twitter:image" content={metaImage} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <LanguageSwitcher />
         <div className={styles.hero}>
-          <div>
+          {/* <div>
             <h1>Проверка автомобиля онлайн — история по VIN и номеру</h1>
             <h2>Qr code generator - сервис по поиску полезной информации об авто.</h2>
-          </div>
+          </div> */}
         </div>
         <div className={`${styles.navigation}`}>
           {router.pathname !== "/" && (

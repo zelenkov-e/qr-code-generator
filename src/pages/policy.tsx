@@ -1,18 +1,13 @@
 import MainLayout from "@/components/MainLoyout";
 import styles from "./../styles/Home.module.scss";
-import Link from "next/link";
 import { getI18nProps } from "@/lib/withTranslations";
 import { useTranslation } from "react-i18next";
-
-const HeaderProps = {
-  title: "Политика конфиденциальности и пользовательское соглашение | Info4cars",
-  description:
-    "Ознакомьтесь с политикой конфиденциальности и пользовательским соглашением Info4cars. Мы соблюдаем Закон о защите персональных данных и обеспечиваем безопасность введённой вами информации.",
-  keywords: "политика конфиденциальности, защита данных, пользовательское соглашение, Info4cars, персональные данные, безопасность, Беларусь",
-};
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 function PolicyPage() {
   const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "privacyPolicy");
+
   return (
     <MainLayout {...HeaderProps}>
       <main className={`${styles.main} `}>

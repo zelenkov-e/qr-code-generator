@@ -3,17 +3,12 @@ import styles from "./../styles/Home.module.scss";
 import WifiGenerator from "@/components/Generator/WifiGenerator";
 import { getI18nProps } from "@/lib/withTranslations";
 import { useTranslation } from "react-i18next";
-
-const HeaderProps = {
-  title: "О приложении Info4cars — Полная информация об автомобилях по VIN и госномеру",
-  description:
-    "Узнайте, как Info4cars помогает автовладельцам получать важную информацию об автомобилях: история эксплуатации, характеристики, техобслуживание, проверки по VIN и госномеру. Бесплатно для зарегистрированных пользователей.",
-  keywords:
-    "Info4cars, проверка авто, VIN, госномер, история автомобиля, техобслуживание, ДТП, доверенность, угон, исполнительные документы, регистрация авто",
-};
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 function WifiCodeGeneratorPage() {
   const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "wifiCodeGenerator");
+
   const PageProps = {
     preview: t("linkCodeGenerator.preview"),
     uploadLogo: t("linkCodeGenerator.uploadLogo"),

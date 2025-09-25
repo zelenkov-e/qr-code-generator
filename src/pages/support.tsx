@@ -5,16 +5,11 @@ import qrCodeImage from "../../public/imgs/qr-code-payments.png";
 import Separator from "@/components/common/Separator";
 import { useTranslation } from "react-i18next";
 import { getI18nProps } from "@/lib/withTranslations";
-
-const HeaderProps = {
-  title: "Поддержать Info4cars — Помогите развитию проекта",
-  description:
-    "Поддержите проект Info4cars. Ваши пожертвования помогают нам улучшать сервис, развивать функциональность и обеспечивать доступ к важной информации для всех пользователей.",
-  keywords: "пожертвование Info4cars, поддержать проект, E-POS, помощь проекту, финансирование, Info4cars донат, поддержка сайта",
-};
+import { getHeaderProps } from "@/lib/getHeaderProps";
 
 function SupportUsPage() {
   const { t } = useTranslation("page");
+  const HeaderProps = getHeaderProps(t, "support");
   return (
     <MainLayout {...HeaderProps}>
       <main className={`${styles.main}`}>

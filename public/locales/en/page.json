@@ -1,13 +1,23 @@
 {
   "home": {
     "title": "Create and generate multiple QR codes online",
-    "description": "Qr code generator is a service for generating QR codes with the option to add your own unique label. Supports bulk creation of multiple codes at once."
+    "description": "Qr code generator is a service for generating QR codes with the option to add your own unique label. Supports bulk creation of multiple codes at once.",
+    "meta": {
+      "title": "QR Code Generator — qr-code-generator.site",
+      "description": "Generate single or multiple QR codes online. Supports up to 50 QR codes at once for events and campaigns.",
+      "keywords": "QR code generator, bulk QR codes, create QR code, qr-code-generator.site"
+    }
   },
   "contactUs": {
     "title": "Contact Us — QR Code Generator User Support",
     "description": "If you have any questions, suggestions, or need assistance — contact our team. We will respond as quickly as possible.",
     "agreement": "You agree that your data will be used to process your request.",
-    "privacyPolicy": "privacy policy."
+    "privacyPolicy": "privacy policy.",
+    "meta": {
+      "title": "Contact Us — qr-code-generator.site",
+      "description": "Get in touch with qr-code-generator.site team for support, suggestions, or feedback.",
+      "keywords": "contact qr-code-generator.site, QR code generator support"
+    }
   },
   "about": {
     "intro": "qr-code-generator is a convenient and functional application that helps users create QR codes for different purposes. Our main advantage is the ability to generate multiple codes at once and add your own unique label.",
@@ -18,6 +28,11 @@
       "customLabel": "Custom labels: add your own text or logo to each code.",
       "infoSearch": "Information encoding: generate QR codes for links, Wi-Fi, business cards, and other data.",
       "history": "Generation history: view previously created QR codes and reuse them."
+    },
+    "meta": {
+      "title": "About — qr-code-generator.site",
+      "description": "qr-code-generator.site is a free service for creating single or bulk QR codes and decoding existing ones.",
+      "keywords": "about qr-code-generator.site, QR code generator info"
     }
   },
 
@@ -27,7 +42,12 @@
     "donation2": "Donations are used to maintain the application, improve the user experience, and promote content that is important for our audience.",
     "paymentTitle": "Payment via personal account through the E-POS service",
     "paymentInstruction": "To pay, the client needs to open their banking app, select: ERIP / E-POS service / and enter the account number: 30916-1-1",
-    "qrInstruction": "Scan the QR code to make a payment"
+    "qrInstruction": "Scan the QR code to make a payment",
+    "meta": {
+      "title": "Support — qr-code-generator.site",
+      "description": "Donations help maintain and improve qr-code-generator.site. Thank you for your support!",
+      "keywords": "support qr-code-generator.site, donate QR code generator"
+    }
   },
 
   "privacyPolicy": {
@@ -42,6 +62,11 @@
       "responsibility": "4. Limitation of liability: The 'qr-code-generator' service is not responsible for incorrect use of QR codes by users or for possible malfunctions of third-party services.",
       "intellectual": "5. Intellectual property: All rights to logos, names, and content that QR codes may link to belong to their respective owners. Our service does not copy or infringe on third-party intellectual property.",
       "consent": "6. User consent: By using the application, the user agrees to this agreement and confirms that they understand all conditions and limitations."
+    },
+    "meta": {
+      "title": "Privacy Policy — qr-code-generator.site",
+      "description": "Learn how qr-code-generator.site processes and protects user data. No registration, no cookies.",
+      "keywords": "privacy policy qr-code-generator.site, QR code data protection"
     }
   },
 
@@ -56,7 +81,12 @@
       "Generate the QR code and share it with others.",
       "When scanned, the QR code will automatically connect the device to your Wi-Fi network."
     ],
-    "note": "Your data is not stored or shared with third parties."
+    "note": "Your data is not stored or shared with third parties.",
+    "meta": {
+      "title": "Wi-Fi QR Code Generator — qr-code-generator.site",
+      "description": "Generate QR codes for Wi-Fi connections. Share QR codes to let others connect instantly without typing passwords.",
+      "keywords": "Wi-Fi QR code, Wi-Fi login QR, qr-code-generator.site"
+    }
   },
   "linkCodeGenerator": {
     "title": "Link Code Generator",
@@ -82,7 +112,12 @@
       "Share the QR code in print or digital materials.",
       "When scanned, the QR code will immediately redirect the user to the specified link."
     ],
-    "note": "The service does not verify the content of links. The user is responsible for their validity."
+    "note": "The service does not verify the content of links. The user is responsible for their validity.",
+    "meta": {
+      "title": "Link QR Code Generator — qr-code-generator.site",
+      "description": "Generate QR codes from links, websites, and documents. Bulk generation up to 50 QR codes at once.",
+      "keywords": "link QR code, bulk QR code, qr-code-generator.site"
+    }
   },
 
   "QRCodeDecoder": {
@@ -93,6 +128,11 @@
     "decodeBtn": "Decode",
     "preview": "Preview",
     "resultLabel": "Result",
-    "notFound": "QR code not found"
+    "notFound": "QR code not found",
+    "meta": {
+      "title": "QR Code Decoder — qr-code-generator",
+      "description": "Use qr-code-generator QR decoder to upload an image with a QR code and get the decoded link. Supports PNG and JPG.",
+      "keywords": "QR code, decoder, QR scan, qr-code-generator"
+    }
   }
 }
