@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 const PAGES = [
   { title: "link code generator", icon: <BsQrCode />, path: "/link-code-generator" },
   { title: "wi-fi code generator", icon: <BsQrCode />, path: "/wi-fi-code-generator" },
+  { title: "qr-code-decoder", icon: <BsQrCode />, path: "/qr-code-decoder" },
   { title: "contact", icon: <FaInfoCircle />, path: "/contact" },
   { title: "about", icon: <FaInfoCircle />, path: "/about" },
   { title: "support us", icon: <FaHandsHelping />, path: "/support" },

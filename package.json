@@ -12,6 +12,7 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "i18next": "^25.5.2",
+    "jsqr": "^1.4.0",
     "jszip": "^3.10.1",
     "next": "15.3.2",
     "next-i18next": "^15.4.2",
