@@ -83,5 +83,16 @@
       "When scanned, the QR code will immediately redirect the user to the specified link."
     ],
     "note": "The service does not verify the content of links. The user is responsible for their validity."
+  },
+
+  "QRCodeDecoder": {
+    "title": "QR Code Decoder",
+    "description": "Upload an image with a QR code and get the decoded link.",
+    "note": "Only PNG or JPG images are supported.",
+    "uploadLabel": "Upload QR Code",
+    "decodeBtn": "Decode",
+    "preview": "Preview",
+    "resultLabel": "Result",
+    "notFound": "QR code not found"
   }
 }

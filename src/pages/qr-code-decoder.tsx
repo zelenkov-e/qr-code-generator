@@ -13,23 +13,29 @@ const HeaderProps = {
     "Info4cars, проверка авто, VIN, госномер, история автомобиля, техобслуживание, ДТП, доверенность, угон, исполнительные документы, регистрация авто",
 };
 
-function LinkCodeGeneratorPage() {
+function QRCodeDecoderPage() {
   const { t } = useTranslation("page");
-  const PageProps = {};
+  const PageProps = {
+    uploadLabel: t("QRCodeDecoder.uploadLabel"),
+    decodeBtn: t("QRCodeDecoder.decodeBtn"),
+    preview: t("QRCodeDecoder.preview"),
+    resultLabel: t("QRCodeDecoder.resultLabel"),
+    notFound: t("QRCodeDecoder.notFound"),
+  };
 
   return (
     <MainLayout {...HeaderProps}>
       <main className={styles.main}>
-        {/* <h1>{t("linkCodeGenerator.title")}</h1> */}
-        {/* <p>
-          {t("linkCodeGenerator.description")}
-          {t("linkCodeGenerator.note")}
-        </p> */}
+        <h1>{t("QRCodeDecoder.title")}</h1>
+        <p>
+          {t("QRCodeDecoder.description")}
+          {t("QRCodeDecoder.note")}
+        </p>
       </main>
-      <QRCodeDecoder />
+      <QRCodeDecoder {...PageProps} />
     </MainLayout>
   );
 }
 
 export const getStaticProps = getI18nProps(["page"]);
-export default LinkCodeGeneratorPage;
+export default QRCodeDecoderPage;

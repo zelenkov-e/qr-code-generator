@@ -2,7 +2,15 @@ import React, { useState, useCallback, ChangeEvent } from "react";
 import jsQR, { QRCode } from "jsqr";
 import styles from "./QRCodeDecoder.module.scss";
 
-const QRCodeDecoder: React.FC = () => {
+interface QRCodeDecoderProps {
+  uploadLabel: string;
+  decodeBtn: string;
+  preview: string;
+  resultLabel: string;
+  notFound: string;
+}
+
+const QRCodeDecoder: React.FC<QRCodeDecoderProps> = ({ uploadLabel, decodeBtn, preview, resultLabel, notFound }) => {
   const [image, setImage] = useState<string | null>(null);
   const [decodedLink, setDecodedLink] = useState<string | null>(null);
 
@@ -47,20 +55,17 @@ const QRCodeDecoder: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>QR Code Decoder</h1>
-
       <div className={styles.uploadBox}>
-        <label className={styles.label}>Upload QR Code</label>
         <input type="file" accept="image/*" onChange={handleImageUpload} className={styles.fileInput} />
       </div>
 
       <button onClick={decodeQRCode} className={styles.decodeButton} disabled={!image}>
-        Decode QR Code
+        {decodeBtn}
       </button>
 
       {decodedLink && (
         <p className={styles.result}>
-          Decoded Link:{" "}
+          {resultLabel}:{" "}
           <a href={decodedLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
             {decodedLink}
           </a>
@@ -69,7 +74,7 @@ const QRCodeDecoder: React.FC = () => {
 
       {image && (
         <div className={styles.preview}>
-          <p className={styles.previewLabel}>Preview:</p>
+          <p className={styles.previewLabel}>{preview}</p>
           <img src={image} alt="Uploaded QR Code" className={styles.previewImage} />
         </div>
       )}
