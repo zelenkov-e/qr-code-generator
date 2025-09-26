@@ -1,6 +1,6 @@
 {
-  "name": "Info4Cars",
-  "short_name": "Info4Cars",
+  "name": "qr-code-generator",
+  "short_name": "qr-code-generator",
   "icons": [
     {
       "src": "/favicon-48x48.png",

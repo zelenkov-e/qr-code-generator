@@ -129,7 +129,7 @@ function ContactPage() {
           <Wrapper gap="1rem">
             <Checkbox name="contact-us" checked={isAllowAgreement} onChange={() => setIsAllowAgreement(!isAllowAgreement)} />
             <Text size="small">
-              {t("contactUs.agreement")} <Link href="/privacy-policy">{t("contactUs.privacyPolicy")}</Link>
+              {t("contactUs.agreement")} <Link href="/policy">{t("contactUs.privacyPolicy")}</Link>
             </Text>
           </Wrapper>
           <Separator />

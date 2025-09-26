@@ -6,6 +6,15 @@
       "title": "QR Code Generator — qr-code-generator",
       "description": "Создавайте одиночные или множественные QR-коды онлайн. Поддерживается массовая генерация до 50 QR-кодов за один раз.",
       "keywords": "QR code generator, генерация QR, мульти QR-коды, qr-code-generator"
+    },
+    "card": {
+      "link": "qr-code генератор по ссылке",
+      "wifi": "wi-fi qr-code генератор",
+      "decoder": "qr-code декодер по картинке",
+      "contact": "свяжись с нами",
+      "about": "о нас",
+      "supportUs": "поддержка сайта",
+      "privacy": "политика безопасности"
     }
   },
   "contactUs": {
@@ -70,7 +79,7 @@
   },
 
   "wifiCodeGenerator": {
-    "title": "Wi-Fi Code Generator",
+    "title": "Wi-Fi QR-Code генератор",
     "description": "Сервис для генерации QR-кодов, позволяющих быстро подключаться к Wi-Fi сети без ввода пароля вручную.",
     "usageTitle": "Использование Wi-Fi Code Generator",
     "usage": [
@@ -88,7 +97,7 @@
     }
   },
   "linkCodeGenerator": {
-    "title": "Link Code Generator",
+    "title": "QR-Code генератор по ссылке",
     "description": "Сервис для генерации QR-кодов, содержащих ссылки на сайты, документы или страницы в интернете.",
     "uploadLogo": "Выберите логотип (png/jpg):",
     "preview": "Предпросмотр:",

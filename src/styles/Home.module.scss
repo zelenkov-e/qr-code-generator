@@ -35,7 +35,7 @@
 /* Hero Banner */
 .hero {
   @extend %sectionLayout;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/main.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/imgs/main.png") center/cover no-repeat;
 }
 
 // .about {
@@ -114,6 +114,41 @@
 
 .cta button:hover {
   background: #edf2f7;
+}
+
+.footerTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.tabCard {
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--card-bg);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.tabCard span {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.tabIcon {
+  font-size: 1.6rem;
+  color: var(--primary);
 }
 
 /* Responsive */

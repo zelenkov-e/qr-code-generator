@@ -6,6 +6,15 @@
       "title": "QR Code Generator — qr-code-generator.site",
       "description": "Generate single or multiple QR codes online. Supports up to 50 QR codes at once for events and campaigns.",
       "keywords": "QR code generator, bulk QR codes, create QR code, qr-code-generator.site"
+    },
+    "card": {
+      "link": "link qr-code generator",
+      "wifi": "wi-fi gr-code generator",
+      "decoder": "qr-code decoder",
+      "contact": "contact",
+      "about": "about",
+      "supportUs": "support us",
+      "privacy": "privacy policy"
     }
   },
   "contactUs": {

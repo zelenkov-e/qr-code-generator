@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   // output: "export",
   reactStrictMode: true,
   i18n: {
-    defaultLocale: "ru",
+    defaultLocale: "en",
     locales: ["ru", "en"],
     localeDetection: false, // отключаем автоопределение
   },

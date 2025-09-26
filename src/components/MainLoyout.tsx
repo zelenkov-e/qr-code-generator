@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "./../styles/Home.module.scss";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { getI18nProps } from "@/lib/withTranslations";
+import { useTranslation } from "react-i18next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +23,7 @@ interface MainLayoutProps {
 
 const MainLayout = ({ title, description, keywords, children, image }: MainLayoutProps) => {
   const router = useRouter();
+  const { t } = useTranslation("page");
 
   return (
     <>
@@ -44,12 +47,7 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <LanguageSwitcher />
-        <div className={styles.hero}>
-          {/* <div>
-            <h1>Проверка автомобиля онлайн — история по VIN и номеру</h1>
-            <h2>Qr code generator - сервис по поиску полезной информации об авто.</h2>
-          </div> */}
-        </div>
+
         <div className={`${styles.navigation}`}>
           {router.pathname !== "/" && (
             <Link href="/">
@@ -66,4 +64,5 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
     </>
   );
 };
+
 export default MainLayout;

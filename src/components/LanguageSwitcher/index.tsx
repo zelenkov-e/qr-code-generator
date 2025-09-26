@@ -11,10 +11,10 @@ export default function LanguageSwitcher() {
           <button
             style={{
               marginRight: 10,
-              padding: "6px 12px",
+              padding: "6px 35px",
               borderRadius: 6,
-              border: lng === locale ? "2px solid #2563eb" : "1px solid #ccc",
-              background: lng === locale ? "#2563eb" : "#f9f9f9",
+              border: lng === locale ? "2px solid #2b6cb0" : "1px solid #ccc",
+              background: lng === locale ? "#2b6cb0" : "#f9f9f9",
               color: lng === locale ? "#fff" : "#333",
               cursor: "pointer",
             }}
