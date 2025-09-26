@@ -12,7 +12,7 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-        {/* <script defer src="https://cloud.umami.is/script.js" data-website-id="f1625584-2110-4e0b-92c5-bb2765cc123b"></script> */}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="97055c46-f909-41aa-a235-3812caa4d993"></script>
       </Head>
       <body>
         <Main />
