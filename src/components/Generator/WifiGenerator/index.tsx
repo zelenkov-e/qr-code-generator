@@ -74,8 +74,7 @@ const WifiGenerator = ({ preview, uploadLogo, resetBtn, generateBtn, downloadBtn
     setWifiConfigs(wifiConfigs.filter((_, i) => i !== index));
   };
 
-  const generateWifiString = ({ ssid, password, type, hidden }: WifiConfig) =>
-    `WIFI:T:${type};S:${ssid};P:${password};H:${hidden ? "true" : "false"};;`;
+  const generateWifiString = ({ ssid, password, type, hidden }: WifiConfig) => `WIFI:T:${type};S:${ssid};P:${password};H:${hidden ? "true" : "false"};;`;
 
   const generateAllQR = () => {
     if (wifiConfigs.length === 0) {
@@ -145,13 +144,15 @@ const WifiGenerator = ({ preview, uploadLogo, resetBtn, generateBtn, downloadBtn
         </button>
       </div>
 
-      <button onClick={generateAllQR} className={styles.generateBtn}>
-        {generateBtn}
-      </button>
+      <div className={styles.actions}>
+        <button onClick={generateAllQR} className={styles.generateBtn}>
+          {generateBtn}
+        </button>
 
-      <button onClick={resetAll} className={styles.resetBtn}>
-        {resetBtn}
-      </button>
+        <button onClick={resetAll} className={styles.resetBtn}>
+          {resetBtn}
+        </button>
+      </div>
 
       {/* Сетка с QR */}
       <div className={styles.qrGrid}>
@@ -159,22 +160,7 @@ const WifiGenerator = ({ preview, uploadLogo, resetBtn, generateBtn, downloadBtn
           const canvasId = `qr-${idx}`;
           return (
             <div key={idx} className={styles.qrItem}>
-              <QRCode
-                id={canvasId}
-                value={qr.data}
-                ecLevel="H"
-                size={300}
-                quietZone={20}
-                fgColor="#000000"
-                bgColor="#ffffff"
-                qrStyle="squares"
-                logoImage={qr.logoImage}
-                logoWidth={48}
-                logoHeight={48}
-                logoPadding={12}
-                logoPaddingStyle="circle"
-                removeQrCodeBehindLogo
-              />
+              <QRCode id={canvasId} value={qr.data} ecLevel="H" size={300} quietZone={20} fgColor="#000000" bgColor="#ffffff" qrStyle="squares" logoImage={qr.logoImage} logoWidth={48} logoHeight={48} logoPadding={12} logoPaddingStyle="circle" removeQrCodeBehindLogo />
               <button onClick={() => downloadQR(canvasId, idx)} className={styles.downloadBtn}>
                 {downloadBtn}
               </button>

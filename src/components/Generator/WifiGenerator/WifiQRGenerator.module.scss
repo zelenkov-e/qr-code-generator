@@ -43,12 +43,10 @@
 
   .wifiBlock {
     margin-bottom: 1rem;
-    // position: relative;
     cursor: pointer;
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 16px;
-    // text-align: center;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
 
@@ -112,6 +110,60 @@
 
     &:hover {
       background: #b91c1c;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.generateBtn {
+      background-color: #0070f3;
+      color: white;
+
+      &:hover {
+        background-color: #005ac1;
+      }
+    }
+
+    &.resetBtn {
+      background-color: #f44336;
+      color: white;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+
+    &.zipBtn {
+      background-color: #4caf50;
+      color: white;
+
+      &:hover {
+        background-color: #3d8b41;
+      }
+    }
+
+    &.downloadBtn {
+      background-color: #333;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: #111;
+      }
     }
   }
 }

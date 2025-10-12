@@ -83,13 +83,7 @@
     "title": "Wi-Fi Code Generator",
     "description": "A service for generating QR codes that let users quickly connect to a Wi-Fi network without entering the password manually.",
     "usageTitle": "How to Use Wi-Fi Code Generator",
-    "usage": [
-      "Enter the name of your Wi-Fi network (SSID).",
-      "Enter the network password (if required).",
-      "Select the encryption type (WPA, WPA2, no password).",
-      "Generate the QR code and share it with others.",
-      "When scanned, the QR code will automatically connect the device to your Wi-Fi network."
-    ],
+    "usage": ["Enter the name of your Wi-Fi network (SSID).", "Enter the network password (if required).", "Select the encryption type (WPA, WPA2, no password).", "Generate the QR code and share it with others.", "When scanned, the QR code will automatically connect the device to your Wi-Fi network."],
     "note": "Your data is not stored or shared with third parties.",
     "meta": {
       "title": "Wi-Fi QR Code Generator — qr-code-generator.site",
@@ -114,13 +108,7 @@
     "limit": "Maximum {{max}} links at a time.",
     "noQRs": "No QR codes available for download",
     "usageTitle": "How to use Link Code Generator",
-    "usage": [
-      "Enter the URL address that the QR code should redirect to.",
-      "Optionally, add a description or a unique label.",
-      "Generate the QR code and download it in the required format.",
-      "Share the QR code in print or digital materials.",
-      "When scanned, the QR code will immediately redirect the user to the specified link."
-    ],
+    "usage": ["Enter the URL address that the QR code should redirect to.", "Optionally, add a description or a unique label.", "Generate the QR code and download it in the required format.", "Share the QR code in print or digital materials.", "When scanned, the QR code will immediately redirect the user to the specified link."],
     "note": "The service does not verify the content of links. The user is responsible for their validity.",
     "meta": {
       "title": "Link QR Code Generator — qr-code-generator.site",
@@ -128,7 +116,31 @@
       "keywords": "link QR code, bulk QR code, qr-code-generator.site"
     }
   },
-
+  "eventCodeGenerator": {
+    "title": "Event QR Code Generator",
+    "description": "A service for generating QR code for meetings, conferences, or reminders.",
+    "uploadLogo": "Choose a logo (png/jpg):",
+    "preview": "Preview:",
+    "inputLabel": "Event details",
+    "generateBtn": "Generate QR codes",
+    "resetBtn": "Reset",
+    "downloadBtn": "Download",
+    "downloadAllBtn": "Download all as ZIP",
+    "noEvents": "No data to generate QR codes.",
+    "noQRs": "No QR codes available for download",
+    "placeholders": {
+      "summary": "Event title",
+      "start": "Start date and time",
+      "end": "End date and time",
+      "location": "Event location",
+      "description": "Short description"
+    },
+    "meta": {
+      "title": "Event QR Code Generator — qr-code-generator.site",
+      "description": "Create calendar event QR codes easily. Generate, customize, and download QR codes for meetings, conferences, or reminders.",
+      "keywords": "event QR code, calendar QR code, event generator, qr-code-generator.site"
+    }
+  },
   "QRCodeDecoder": {
     "title": "QR Code Decoder",
     "description": "Upload an image with a QR code and get the decoded link.",

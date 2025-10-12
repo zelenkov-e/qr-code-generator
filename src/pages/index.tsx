@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.scss";
 import { FaInfoCircle, FaHandsHelping, FaImage, FaKey, FaWifi, FaLink } from "react-icons/fa";
+import { MdEventAvailable } from "react-icons/md";
 import { useRouter } from "next/router";
 import Fab from "@/components/common/Fab";
 import { IoMail } from "react-icons/io5";
@@ -12,6 +13,7 @@ import { getHeaderProps } from "@/lib/getHeaderProps";
 const inter = Inter({ subsets: ["latin"] });
 
 const PAGES = [
+  { title: "qr-code event", icon: <MdEventAvailable />, path: "/qr-code-event" },
   { title: "link qr-code generator", icon: <FaLink />, path: "/link-code-generator" },
   { title: "wi-fi gr-code generator", icon: <FaWifi />, path: "/wi-fi-code-generator" },
   { title: "qr-code decoder", icon: <FaImage />, path: "/qr-code-decoder" },
