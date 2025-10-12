@@ -1,3 +1,4 @@
+"use client";
 import MainLayout from "@/components/MainLoyout";
 import styles from "./../styles/Home.module.scss";
 import { getI18nProps } from "@/lib/withTranslations";
@@ -13,7 +14,6 @@ function PolicyPage() {
       <main className={`${styles.main} `}>
         <h3>{t("privacyPolicy.title")}</h3>
 
-        {/* <h1>{t("privacyPolicy.agreementTitle")}</h1> */}
         <div className="agreement">
           <p>{t("privacyPolicy.agreement.service")}</p>
           <p>{t("privacyPolicy.agreement.dataTransfer")}</p>

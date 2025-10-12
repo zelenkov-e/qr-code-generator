@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Chip from "./common/Chip";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
@@ -10,6 +11,7 @@ import styles from "./../styles/Home.module.scss";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { getI18nProps } from "@/lib/withTranslations";
 import { useTranslation } from "react-i18next";
+import { Fragment } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,18 +48,20 @@ const MainLayout = ({ title, description, keywords, children, image }: MainLayou
         <meta name="twitter:image" content={image} />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <LanguageSwitcher />
+        {router.pathname !== "/" && (
+          <div className={`${styles.navigation}`}>
+            <Fragment>
+              <LanguageSwitcher />
+              <Link href="/">
+                <Chip>
+                  <MdOutlineArrowBackIosNew size={24} color="black" />
+                  back
+                </Chip>
+              </Link>
+            </Fragment>
+          </div>
+        )}
 
-        <div className={`${styles.navigation}`}>
-          {router.pathname !== "/" && (
-            <Link href="/">
-              <Chip>
-                <MdOutlineArrowBackIosNew size={24} color="black" />
-                back
-              </Chip>
-            </Link>
-          )}
-        </div>
         {children}
         <Fab onClick={() => router.push("/contact")} icon={<IoMail />} />
       </main>

@@ -128,12 +128,16 @@
     "downloadAllBtn": "Download all as ZIP",
     "noEvents": "No data to generate QR codes.",
     "noQRs": "No QR codes available for download",
+    "deviceLimitations": "On devices with iOS below 14v. and Android below 10v., the built-in scanner may not support adding events directly to the calendar. In such cases, use a third-party app for scanning",
     "placeholders": {
       "summary": "Event title",
       "start": "Start date and time",
       "end": "End date and time",
-      "location": "Event location",
-      "description": "Short description"
+      "city": "City",
+      "street": "Street",
+      "building": "Building",
+      "description": "Short description",
+      "alert": "Please enter the correct address: city, street and building."
     },
     "meta": {
       "title": "Event QR Code Generator — qr-code-generator.site",

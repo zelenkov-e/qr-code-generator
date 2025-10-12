@@ -1,3 +1,4 @@
+"use client";
 import MainLayout from "@/components/MainLoyout";
 import styles from "./../styles/Home.module.scss";
 import LinkGenerator from "@/components/Generator/LinkGenerator";

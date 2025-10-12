@@ -19,11 +19,15 @@ function QrCodeEventPage() {
     downloadAllBtn: t("eventCodeGenerator.downloadAllBtn"),
     noEvents: t("eventCodeGenerator.noEvents"),
     noQRs: t("eventCodeGenerator.noQRs"),
+    deviceLimitations: t("eventCodeGenerator.deviceLimitations"),
     placeholders: {
       summary: t("eventCodeGenerator.placeholders.summary"),
       start: t("eventCodeGenerator.placeholders.start"),
       end: t("eventCodeGenerator.placeholders.end"),
-      location: t("eventCodeGenerator.placeholders.location"),
+      city: t("eventCodeGenerator.placeholders.city"),
+      street: t("eventCodeGenerator.placeholders.street"),
+      building: t("eventCodeGenerator.placeholders.building"),
+      alert: t("eventCodeGenerator.placeholders.alert"),
       description: t("eventCodeGenerator.placeholders.description"),
     },
   };

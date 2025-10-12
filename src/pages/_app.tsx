@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { ToastProvider } from "@/context/ToastContext";
 import { appWithTranslation } from "next-i18next";
-// import nextI18NextConfig from "../../next-i18next.config";
+import nextI18NextConfig from "../../next-i18next.config";
 import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {

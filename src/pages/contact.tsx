@@ -1,3 +1,4 @@
+"use client";
 import MainLayout from "@/components/MainLoyout";
 import { getI18nProps } from "@/lib/withTranslations";
 import { useTranslation } from "next-i18next";
@@ -48,9 +49,7 @@ function ContactPage() {
 
     isEmtyField(contacts.Phone) && isEmtyField(contacts.Email) && required.push(`${Inputs.phone} или ${Inputs.email}`);
 
-    ((!isEmtyField(contacts.Phone) && contacts.Phone.length < PHONEMINLENGTH) ||
-      (!isEmtyField(contacts.Email) && !checkIsValidateMail(contacts.Email))) &&
-      required.push(`${Inputs.phone} или ${Inputs.email}`);
+    ((!isEmtyField(contacts.Phone) && contacts.Phone.length < PHONEMINLENGTH) || (!isEmtyField(contacts.Email) && !checkIsValidateMail(contacts.Email))) && required.push(`${Inputs.phone} или ${Inputs.email}`);
 
     isEmtyField(note) && required.push(Inputs.note);
 
@@ -109,17 +108,11 @@ function ContactPage() {
             return (
               <div key={indx}>
                 <Input type="text" placeholder={placeholder} name={name} value={contacts[name]} handleChange={handleChange} />
-                {name === FormInputs.name && !isEmtyField(contacts[name]) && contacts[name].length < NAMEMINLENGTH && (
-                  <div color={Types.danger}>{minLength(NAMEMINLENGTH)}</div>
-                )}
+                {name === FormInputs.name && !isEmtyField(contacts[name]) && contacts[name].length < NAMEMINLENGTH && <div color={Types.danger}>{minLength(NAMEMINLENGTH)}</div>}
                 <Separator size="small" />
-                {name === FormInputs.phone && !isEmtyField(contacts[name]) && contacts[name].length < PHONEMINLENGTH && (
-                  <div color={Types.danger}>{minLength(PHONEMINLENGTH)}</div>
-                )}
+                {name === FormInputs.phone && !isEmtyField(contacts[name]) && contacts[name].length < PHONEMINLENGTH && <div color={Types.danger}>{minLength(PHONEMINLENGTH)}</div>}
                 <Separator size="small" />
-                {name === FormInputs.email && !isEmtyField(contacts[name]) && !checkIsValidateMail(contacts[name] as string) && (
-                  <div color={Types.danger}>{notCorrectEmail()}</div>
-                )}
+                {name === FormInputs.email && !isEmtyField(contacts[name]) && !checkIsValidateMail(contacts[name] as string) && <div color={Types.danger}>{notCorrectEmail()}</div>}
               </div>
             );
           })}

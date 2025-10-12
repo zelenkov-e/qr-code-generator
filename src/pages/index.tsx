@@ -1,3 +1,4 @@
+"use client";
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.scss";
 import { FaInfoCircle, FaHandsHelping, FaImage, FaKey, FaWifi, FaLink } from "react-icons/fa";
