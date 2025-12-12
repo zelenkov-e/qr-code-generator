@@ -178,6 +178,7 @@
     "note": "Copied to clipboard",
     "stopScan": "Stop",
     "startScan": "Start scan",
+    "iframeMessage": "Point your camera at the QR or barcode to scan",
     "meta": {
       "title": "QR & Bar Code Scanner — qr-code-generator",
       "description": "Use qr-code-generator to scan a QR or bar code from the camera.",

@@ -6,9 +6,10 @@ interface Props {
   stopScan: string;
   startScan: string;
   note: string;
+  iframeMessage: string;
 }
 
-export default function BarCodeScanner({ stopScan, startScan, note }: Props) {
+export default function BarCodeScanner({ stopScan, startScan, note, iframeMessage }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const controlsRef = useRef<any>(null); // <--- FIX
   const readerRef = useRef(new BrowserMultiFormatReader()); // <--- FIX
@@ -46,6 +47,7 @@ export default function BarCodeScanner({ stopScan, startScan, note }: Props) {
     <div className={styles.wrapper}>
       <div className={styles.videoContainer}>
         <video ref={videoRef} className={styles.video} />
+        {!isScanning && !result && <div className={styles.videoOverlay}>{iframeMessage}</div>}
       </div>
 
       <div className={styles.actions}>

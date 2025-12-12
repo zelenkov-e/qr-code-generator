@@ -14,6 +14,7 @@ function BarCodeScannerPage() {
     stopScan: t("BarCodeScannerPage.stopScan"),
     startScan: t("BarCodeScannerPage.startScan"),
     note: t("BarCodeScannerPage.note"),
+    iframeMessage: t("BarCodeScannerPage.iframeMessage"),
   };
 
   return (

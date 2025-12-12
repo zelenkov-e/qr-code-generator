@@ -5,7 +5,7 @@ export default function LanguageSwitcher() {
   const { locales, asPath, locale } = useRouter();
 
   return (
-    <div style={{ margin: "20px 0", textAlign: "center" }}>
+    <div style={{ margin: "7px 0", textAlign: "center" }}>
       {locales?.map((lng) => (
         <Link key={lng} href={asPath} locale={lng}>
           <button
