@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import styles from "./../styles/Home.module.scss";
 import { FaInfoCircle, FaHandsHelping, FaImage, FaKey, FaWifi, FaLink } from "react-icons/fa";
-import { MdEventAvailable } from "react-icons/md";
+import { MdEventAvailable, MdQrCodeScanner } from "react-icons/md";
 import { useRouter } from "next/router";
 import Fab from "@/components/common/Fab";
 import { IoMail } from "react-icons/io5";
@@ -14,9 +14,10 @@ import { getHeaderProps } from "@/lib/getHeaderProps";
 const inter = Inter({ subsets: ["latin"] });
 
 const PAGES = [
-  { title: "qr-code event", icon: <MdEventAvailable />, path: "/qr-code-event" },
+  { title: "qr-code / bar-code scanner", icon: <MdQrCodeScanner />, path: "/bar-code-scanner" },
   { title: "link qr-code generator", icon: <FaLink />, path: "/link-code-generator" },
   { title: "wi-fi gr-code generator", icon: <FaWifi />, path: "/wi-fi-code-generator" },
+  { title: "qr-code event", icon: <MdEventAvailable />, path: "/qr-code-event" },
   { title: "qr-code decoder", icon: <FaImage />, path: "/qr-code-decoder" },
 ];
 
@@ -42,6 +43,18 @@ function Home() {
     router.push(path);
   };
 
+  const isMobile = () => {
+    if (typeof window === "undefined") return false;
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  };
+
+  const filteredPages = PAGES.filter((page) => {
+    if (page.path === "/bar-code-scanner") {
+      return isMobile();
+    }
+    return true;
+  });
+
   return (
     <MainLayout {...HeaderProps}>
       <div className={styles.hero}>
@@ -50,7 +63,8 @@ function Home() {
         </div>
       </div>
       <div className={styles.grid}>
-        {PAGES.map((page) => (
+        {filteredPages.map((page) => (
+          // {PAGES.map((page) => (
           <div key={page.title} className={styles.card} onClick={() => handleClick(page.path)}>
             <div className={styles.cardIcon}>{page.icon}</div>
             <h2>{page.title}</h2>
@@ -58,7 +72,6 @@ function Home() {
         ))}
       </div>
 
-      {/* Footer Tabs */}
       <div className={styles.footerTabs}>
         {FOOTER_PAGES.map((page) => (
           <div key={page.title} className={styles.tabCard} onClick={() => handleClick(page.path)}>
